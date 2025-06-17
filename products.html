@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .swiper {
+            padding-bottom: 56px;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            background: rgba(255, 255, 255, 0.90);
+            color: #14b8a6;
+            border: 2.5px solid #2dd4bf;
+            border-radius: 50%;
+            width: 54px;
+            height: 54px;
+            box-shadow: 0 7px 24px 0 rgb(94 234 212 / 0.14), 0 1.5px 5px 0 rgb(20 184 166 / 0.13);
+            transition: all 0.2s;
+            top: 46%;
+        }
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: linear-gradient(135deg, #2dd4bf 0%, #06b6d4 100%);
+            color: #fff;
+            border-color: #2dd4bf;
+            box-shadow: 0 10px 24px 0 rgb(20 184 166 / 0.22);
+            transform: scale(1.08);
+        }
+
+        .swiper-pagination-bullet {
+            width: 16px;
+            height: 16px;
+            margin: 0 6px !important;
+            border-radius: 9999px;
+            background: #fff;
+            border: 2px solid #2dd4bf;
+            box-shadow: 0 1px 5px 0 rgb(20 184 166 / 0.11);
+            opacity: 1;
+            transition: box-shadow 0.2s, background 0.2s;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: linear-gradient(135deg, #2dd4bf 0%, #06b6d4 100%) !important;
+            box-shadow: 0 4px 16px 0 rgb(20 184 166 / 0.22);
+            border-color: #06b6d4;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            border: 1.5px solid #e0f2fe;
+            box-shadow: 0 8px 40px 0 rgba(20, 184, 166, 0.13);
+            border-radius: 1.5rem;
+            transition: box-shadow 0.2s, transform 0.2s;
+            position: relative;
+        }
+
+        .glass-card:hover {
+            box-shadow: 0 16px 48px 0 rgba(20, 184, 166, 0.23), 0 3px 15px 0 rgba(20, 184, 166, 0.18);
+            transform: translateY(-6px) scale(1.035);
+            border-color: #a7f3d0;
+        }
+
+        .card-badge {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            padding: 0.3rem 0.9rem;
+            font-size: 0.76rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #f0fdff 0%, #a7f3d0 100%);
+            color: #0e9488;
+            border-radius: 9999px;
+            box-shadow: 0 2px 8px 0 rgb(20 184 166 / 0.14);
+            border: 1.5px solid #2dd4bf;
+            z-index: 2;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .card-img {
+            margin-top: 2rem;
+            width: 96px;
+            height: 96px;
+            border-radius: 1rem;
+            object-fit: cover;
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.08), 0 1px 4px 0 rgba(20, 184, 166, 0.08);
+            border: 3px solid #fff;
+            background: #fff;
+            z-index: 1;
+            position: relative;
+        }
+
+        .card-title {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 1.19rem;
+            font-weight: 900;
+            margin-top: 1.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #14b8a6 30%, #06b6d4 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-desc {
+            color: #334155;
+            opacity: 0.82;
+            font-size: 1rem;
+            margin-bottom: 1.4rem;
+            min-height: 52px;
+        }
+
+        .card-btn {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(90deg, #2dd4bf 0%, #06b6d4 100%);
+            color: #fff;
+            padding: 0.55rem 1.4rem;
+            border-radius: 9999px;
+            font-weight: 800;
+            font-size: 0.94rem;
+            box-shadow: 0 3px 10px 0 rgba(20, 184, 166, 0.16);
+            letter-spacing: 0.07em;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            transition: background 0.18s, box-shadow 0.18s, transform 0.16s;
+        }
+
+        .card-btn:hover {
+            background: linear-gradient(90deg, #06b6d4 0%, #2dd4bf 100%);
+            box-shadow: 0 7px 24px 0 rgb(20 184 166 / 0.11);
+            transform: translateY(-2px) scale(1.06);
+        }
+
+        /* Modal styles */
+        .modal-bg {
+            position: fixed;
+            z-index: 40;
+            inset: 0;
+            background: rgba(16, 185, 129, 0.18);
+            backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 1.5rem;
+            max-width: 1000px;
+            width: 95%;
+            padding: 2.5rem 2rem 2rem 2rem;
+            box-shadow: 0 16px 64px 0 rgba(20, 184, 166, 0.23);
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .close-modal-btn {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.6rem;
+            font-size: 1.7rem;
+            background: none;
+            border: none;
+            color: #06b6d4;
+            cursor: pointer;
+            z-index: 50;
+            transition: color 0.2s;
+        }
+
+        .close-modal-btn:hover {
+            color: #0e9488;
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 26px;
+        }
+
+        /* --- Manufacturing Section --- */
+        .process-step {
+            background: #fff;
+            border-radius: 1.25rem;
+            box-shadow: 0 7px 32px 0 rgba(20, 184, 166, 0.09), 0 1.5px 5px 0 rgba(20, 184, 166, 0.13);
+            overflow: hidden;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .process-step:hover {
+            box-shadow: 0 16px 48px 0 rgba(20, 184, 166, 0.12), 0 3px 15px 0 rgba(20, 184, 166, 0.10);
+            transform: translateY(-3px) scale(1.025);
+        }
+
+        .process-img {
+            width: 100%;
+            max-height: 180px;
+            min-height: 130px;
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-teal-50 via-white to-teal-100">
+
+    <!-- Manufacturing Process Section -->
+    <section class="pt-14 pb-10">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-teal-700 mb-4 text-center font-serif tracking-tight">
+                How Our Medicines Are Made
+            </h2>
+            <p class="text-center max-w-3xl mx-auto text-slate-600 mb-8 text-lg">
+                Our pharmaceutical products are manufactured under strict quality standards, using world-class
+                technology and highly qualified professionals. Here’s an overview of the careful process behind every
+                product.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Example Step 1 -->
+                <div class="process-step">
+                    <img src="images/process/raw-materials.jpg" alt="Raw Materials Selection" class="process-img">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-teal-700 mb-2">1. Raw Materials Selection</h3>
+                        <p class="text-slate-600">
+                            Only the best quality active and inactive ingredients are sourced from trusted suppliers and
+                            thoroughly tested for purity.
+                        </p>
+                    </div>
+                </div>
+                <!-- Example Step 2 -->
+                <div class="process-step">
+                    <img src="images/process/formulation.jpg" alt="Formulation & Blending" class="process-img">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-teal-700 mb-2">2. Formulation & Blending</h3>
+                        <p class="text-slate-600">
+                            Ingredients are precisely measured and blended using advanced equipment to ensure uniformity
+                            and efficacy.
+                        </p>
+                    </div>
+                </div>
+                <!-- Example Step 3 -->
+                <div class="process-step">
+                    <img src="images/process/packaging.jpg" alt="Packaging & Quality Control" class="process-img">
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-teal-700 mb-2">3. Packaging & Quality Control</h3>
+                        <p class="text-slate-600">
+                            Each batch undergoes strict quality checks before being packed in hygienic, tamper-proof
+                            packaging for delivery.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- You can add more process steps similarly if you have more images -->
+        </div>
+    </section>
+    <!-- End Manufacturing Process Section -->
+
+    <section class="py-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-extrabold text-teal-700 mb-10 text-center font-serif tracking-tight">
+                Our Medicines & Syrups
+            </h2>
+            <div class="flex flex-wrap gap-4 justify-center mb-10">
+                <button class="filter-btn bg-teal-700 text-white px-6 py-2 rounded-full font-semibold shadow border-2 border-teal-700
+                    hover:bg-teal-700 hover:text-white hover:border-teal-700 transition-colors duration-150"
+                    data-filter="all">
+                    All
+                </button>
+                <button class="filter-btn bg-white text-teal-700 px-6 py-2 rounded-full font-semibold shadow border-2 border-teal-600
+                    hover:bg-teal-700 hover:text-white hover:border-teal-700 transition-colors duration-150"
+                    data-filter="tablet">
+                    Tablets
+                </button>
+                <button class="filter-btn bg-white text-teal-700 px-6 py-2 rounded-full font-semibold shadow border-2 border-teal-600
+                    hover:bg-teal-700 hover:text-white hover:border-teal-700 transition-colors duration-150"
+                    data-filter="syrup">
+                    Syrups
+                </button>
+                <button class="filter-btn bg-white text-teal-700 px-6 py-2 rounded-full font-semibold shadow border-2 border-teal-600
+                    hover:bg-teal-700 hover:text-white hover:border-teal-700 transition-colors duration-150"
+                    data-filter="capsule">
+                    Capsules
+                </button>
+                <!-- Add View All Button -->
+                <button id="view-all-btn" class="bg-white text-teal-700 px-6 py-2 rounded-full font-semibold shadow border-2 border-teal-600
+                    hover:bg-teal-700 hover:text-white hover:border-teal-700 transition-colors duration-150"
+                    style="margin-left: 1.2rem;">
+                    View All
+                </button>
+            </div>
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="card-wrapper">
+                    <!-- Slides rendered by JS -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for View All -->
+    <div id="modal-bg" class="modal-bg" style="display: none;">
+        <div class="modal-content">
+            <button class="close-modal-btn" id="close-modal-btn" aria-label="Close">&times;</button>
+            <h3 class="text-2xl font-extrabold text-teal-700 mb-8 text-center font-serif tracking-tight">All Medicines &
+                Syrups</h3>
+            <div class="modal-grid" id="modal-grid">
+                <!-- Cards rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const medicineData = [
+            {
+                name: "Axamol Tablet 500mg",
+                type: "tablet",
+                image: "images/product/Axamol-Tab-500mg.png",
+                desc: "Effective for fever and mild to moderate pain relief. Trusted for all ages."
+            },
+            {
+                name: "Axlor Syrup 60ml",
+                type: "syrup",
+                image: "images/product/axlor-syr-60ml.png",
+                desc: "Antibiotic syrup for bacterial infections, gentle for children."
+            },
+            {
+                name: "Carol 500mg",
+                type: "tablet",
+                image: "images/product/Carol.png",
+                desc: "to prevent and treat respiratory symptoms such as cough, chest tightness, and shortness of breath."
+            },
+            {
+                name: "Ceridal 60ml",
+                type: "syrup",
+                image: "images/product/Ceridal-60ml.png",
+                desc: "used to relieve symptoms of allergies."
+            },
+            {
+                name: "Ceridal Tablet",
+                type: "tablet",
+                image: "images/product/Ceridal-Tablet-New.png",
+                desc: "used to relieve symptoms of allergies."
+            },
+            {
+                name: "Deltalin",
+                type: "syrup",
+                image: "images/product/Deltalin-120ml.png",
+                desc: "Iron supplement syrup, ideal for anemia and iron deficiency."
+            },
+            {
+                name: "Azithromycin",
+                type: "tablet",
+                image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=250&q=80",
+                desc: "Broad spectrum antibiotic for a variety of infections."
+            },
+            {
+                name: "Vitamin D3",
+                type: "capsule",
+                image: "https://images.unsplash.com/photo-1498747946579-bde604cb8f44?auto=format&fit=crop&w=250&q=80",
+                desc: "Supports healthy bones and immune function."
+            },
+            {
+                name: "Multivitamin Kids Syrup",
+                type: "syrup",
+                image: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=250&q=80",
+                desc: "Complete daily vitamins for children's growth and energy."
+            },
+            {
+                name: "Ibuprofen 200mg",
+                type: "tablet",
+                image: "https://images.unsplash.com/photo-1515548211234-c178b01efd66?auto=format&fit=crop&w=250&q=80",
+                desc: "Pain relief and anti-inflammatory for headaches, fever, and arthritis."
+            },
+            {
+                name: "Omega-3 Softgels",
+                type: "capsule",
+                image: "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=250&q=80",
+                desc: "Supports heart and brain health with pure fish oil."
+            },
+            {
+                name: "Zinc Immune Syrup",
+                type: "syrup",
+                image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=250&q=80",
+                desc: "Boosts immunity and helps with faster recovery from colds."
+            },
+            {
+                name: "Calcium Boost Tabs",
+                type: "tablet",
+                image: "https://images.unsplash.com/photo-1513451713350-dee890297c4a?auto=format&fit=crop&w=250&q=80",
+                desc: "Strengthens bones and teeth, ideal for all ages."
+            },
+            {
+                name: "Liver Care Tonic",
+                type: "syrup",
+                image: "https://images.unsplash.com/photo-1456743625078-6c4434a2b510?auto=format&fit=crop&w=250&q=80",
+                desc: "Natural herbal formula to protect and detoxify liver."
+            },
+            {
+                name: "Digestive Enzyme Capsules",
+                type: "capsule",
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=250&q=80",
+                desc: "Supports digestion and nutrient absorption."
+            }
+        ];
+
+        function renderCards(filterType = 'all') {
+            const wrapper = document.getElementById('card-wrapper');
+            wrapper.innerHTML = '';
+            let filtered = medicineData.filter(item => filterType === 'all' || item.type === filterType);
+            filtered.forEach(item => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide flex justify-center';
+                slide.innerHTML = `
+      <div class="glass-card flex flex-col items-center px-7 pt-5 pb-7 relative min-h-[380px]">
+        <span class="card-badge">${item.type}</span>
+        <img src="${item.image}" alt="${item.name}" class="card-img shadow-xl"/>
+        <div class="card-title text-center">${item.name}</div>
+        <div class="card-desc text-center">${item.desc}</div>
+        <button class="card-btn group">
+          Learn More
+          <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    `;
+                wrapper.appendChild(slide);
+            });
+        }
+
+        function renderModalCards(data) {
+            const grid = document.getElementById('modal-grid');
+            grid.innerHTML = '';
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'glass-card flex flex-col items-center px-7 pt-5 pb-7 relative min-h-[380px]';
+                card.innerHTML = `
+                    <span class="card-badge">${item.type}</span>
+                    <img src="${item.image}" alt="${item.name}" class="card-img shadow-xl"/>
+                    <div class="card-title text-center">${item.name}</div>
+                    <div class="card-desc text-center">${item.desc}</div>
+                    <button class="card-btn group">
+                      Learn More
+                      <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                      </svg>
+                    </button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        renderCards();
+
+        let swiper;
+        function initSwiper() {
+            if (swiper) swiper.destroy(true, true);
+            swiper = new Swiper(".mySwiper", {
+                slidesPerView: 3,
+                spaceBetween: 32,
+                loop: true,
+                speed: 600,
+                centeredSlides: true,
+                autoplay: { delay: 3500, disableOnInteraction: false },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                breakpoints: {
+                    0: { slidesPerView: 1 },
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                }
+            });
+        }
+
+        // Filter logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('bg-teal-700', 'text-white', 'border-teal-700');
+                    b.classList.add('bg-white', 'text-teal-700', 'border-teal-600');
+                });
+                this.classList.add('bg-teal-700', 'text-white', 'border-teal-700');
+                this.classList.remove('bg-white', 'text-teal-700', 'border-teal-600');
+                const filterType = this.getAttribute('data-filter');
+                renderCards(filterType);
+                setTimeout(() => initSwiper(), 20); // Re-init Swiper after DOM update
+            });
+        });
+
+        window.addEventListener('DOMContentLoaded', initSwiper);
+        window.addEventListener('resize', () => {
+            setTimeout(() => initSwiper(), 200);
+        });
+
+        // Modal logic
+        const modalBg = document.getElementById('modal-bg');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const viewAllBtn = document.getElementById('view-all-btn');
+
+        viewAllBtn.addEventListener('click', () => {
+            renderModalCards(medicineData);
+            modalBg.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+            modalBg.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+
+        // Close modal on backdrop click
+        modalBg.addEventListener('click', function (e) {
+            if (e.target === modalBg) {
+                modalBg.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Optional: Close modal on Escape key
+        window.addEventListener('keydown', function (e) {
+            if (e.key === "Escape" && modalBg.style.display === 'flex') {
+                modalBg.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</html>
