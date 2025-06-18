@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | AXIS Pharmaceutical</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <meta name="description"
+        content="AXIS Pharmaceutical: Our story, vision, values, and the people behind our mission.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .pattern-bg {
+            background-image: radial-gradient(circle at 40% 0%, rgba(13, 148, 136, 0.08) 0, transparent 70%),
+                radial-gradient(circle at 80% 70%, rgba(20, 184, 166, 0.13) 0, transparent 80%);
+        }
+
+        .timeline-dot {
+            box-shadow: 0 0 0 6px #2dd4bf33, 0 0 0 12px #fff;
+        }
+    </style>
+</head>
+
+<body class="bg-teal-50 min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-teal-600/90 rounded-b-2xl shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="images/logo.png" alt="AXIS Logo" class="w-10 h-10 object-contain" />
+                <span class="ml-2 font-semibold text-white text-lg tracking-widest whitespace-nowrap">
+                    AXIS <span class="font-normal">PHARMACEUTICAL</span>
+                </span>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="text-white font-medium hover:text-teal-200 transition">Home</a>
+                <a href="about.html" class="text-teal-200 font-bold border-b-2 border-white pb-0.5">About</a>
+                <a href="products.html" class="text-white font-medium hover:text-teal-200 transition">Products</a>
+                <a href="news.html" class="text-white font-medium hover:text-teal-200 transition">News</a>
+                <a href="contact.html"
+                    class="ml-4 border border-white rounded-full px-5 py-1.5 text-white font-medium hover:bg-white hover:text-teal-700 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-1 pt-32 pattern-bg">
+
+        <!-- Hero Section -->
+        <section class="relative px-4 pt-10 pb-20">
+            <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-3/5">
+                    <h1 class="text-5xl font-extrabold text-teal-800 mb-6 font-serif leading-tight">
+                        Shaping the Future of <span class="text-teal-500">Healthcare</span>
+                    </h1>
+                    <p class="text-teal-700 text-lg md:text-xl font-medium mb-6">
+                        AXIS Pharmaceutical is driven by a passion for innovation, compassion, and trust.
+                        Since 2009, we've delivered life-changing medicines to millions, setting new standards in
+                        quality and care.
+                    </p>
+                    <div class="flex flex-wrap gap-6 mt-6">
+                        <div class="flex flex-col items-center">
+                            <span class="text-3xl font-bold text-teal-600">40+</span>
+                            <span class="text-teal-700 text-sm">Countries Served</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-3xl font-bold text-teal-600">2M+</span>
+                            <span class="text-teal-700 text-sm">Patients Impacted</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span class="text-3xl font-bold text-teal-600">12</span>
+                            <span class="text-teal-700 text-sm">Certifications</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/5 flex justify-center relative">
+                    <div class="rounded-2xl overflow-hidden border-4 border-teal-200 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1588776814546-ec7e3c5f8e13?auto=format&fit=crop&w=500&q=80"
+                            alt="AXIS Pharmaceuticals Laboratory" class="object-cover h-72 w-72 md:w-80 md:h-80" />
+                    </div>
+                    <svg class="absolute -bottom-6 -right-6 w-20 h-20 text-teal-200 opacity-30 rotate-12"
+                        fill="currentColor" viewBox="0 0 400 400">
+                        <circle cx="200" cy="200" r="200" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="py-12 px-4 bg-white/90">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-extrabold text-teal-700 text-center mb-10 font-serif">Our Journey</h2>
+                <div class="relative border-l-4 border-teal-200 pl-10 ml-6">
+                    <!-- Timeline Item -->
+                    <div class="mb-10 relative">
+                        <span
+                            class="absolute -left-6 top-1 timeline-dot w-6 h-6 rounded-full bg-teal-500 border-4 border-white"></span>
+                        <h4 class="text-xl font-bold text-teal-800 mb-1">2009</h4>
+                        <p class="text-teal-700">AXIS Pharmaceutical was founded with a vision for universally
+                            accessible healthcare.</p>
+                    </div>
+                    <div class="mb-10 relative">
+                        <span
+                            class="absolute -left-6 top-1 timeline-dot w-6 h-6 rounded-full bg-teal-500 border-4 border-white"></span>
+                        <h4 class="text-xl font-bold text-teal-800 mb-1">2012</h4>
+                        <p class="text-teal-700">First GMP-certified manufacturing plant launches, ensuring global
+                            standards from day one.</p>
+                    </div>
+                    <div class="mb-10 relative">
+                        <span
+                            class="absolute -left-6 top-1 timeline-dot w-6 h-6 rounded-full bg-teal-500 border-4 border-white"></span>
+                        <h4 class="text-xl font-bold text-teal-800 mb-1">2017</h4>
+                        <p class="text-teal-700">Launched specialty medicines for chronic and rare conditions, expanding
+                            our impact.</p>
+                    </div>
+                    <div class="mb-10 relative">
+                        <span
+                            class="absolute -left-6 top-1 timeline-dot w-6 h-6 rounded-full bg-teal-500 border-4 border-white"></span>
+                        <h4 class="text-xl font-bold text-teal-800 mb-1">2023</h4>
+                        <p class="text-teal-700">Now trusted in 40+ countries, AXIS continues innovating for a healthier
+                            world.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section class="py-16 px-4 bg-gradient-to-br from-teal-50 to-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-extrabold text-teal-700 text-center mb-12 font-serif">Why Choose AXIS?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                    <div class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center">
+                        <div class="mb-4 p-4 bg-teal-100 rounded-full shadow-inner">
+                            <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="2.2"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M19 21H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h4l2-2 2 2h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-teal-800 mb-2">Certified Quality</h3>
+                        <p class="text-teal-700 text-center text-sm">GMP, ISO, and Halal certifications for
+                            uncompromising global standards.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center">
+                        <div class="mb-4 p-4 bg-teal-100 rounded-full shadow-inner">
+                            <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="2.2"
+                                viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M2 12h20" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-teal-800 mb-2">Global Reach</h3>
+                        <p class="text-teal-700 text-center text-sm">Supplying medicine to over 40 countries and
+                            improving millions of lives.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center">
+                        <div class="mb-4 p-4 bg-teal-100 rounded-full shadow-inner">
+                            <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="2.2"
+                                viewBox="0 0 24 24">
+                                <path d="M12 20v-6m0 0v-2a4 4 0 0 1 8 0v2M6 20v-6a4 4 0 0 1 8 0v6" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-teal-800 mb-2">Innovative R&D</h3>
+                        <p class="text-teal-700 text-center text-sm">Constantly advancing science for new, more
+                            effective therapies.</p>
+                    </div>
+                    <div class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center">
+                        <div class="mb-4 p-4 bg-teal-100 rounded-full shadow-inner">
+                            <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="2.2"
+                                viewBox="0 0 24 24">
+                                <path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4z" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-teal-800 mb-2">People First</h3>
+                        <p class="text-teal-700 text-center text-sm">Patients, partners, and community are at the heart
+                            of every decision.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section class="py-16 px-4 bg-white">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-3xl font-extrabold text-teal-700 mb-10 text-center font-serif">Leadership</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="bg-teal-50 rounded-2xl shadow-md border border-teal-100 p-9 flex flex-col items-center">
+                        <img src="images/leadership/ceo.jpg" alt="Dr. Farah Malik, CEO"
+                            class="w-24 h-24 rounded-full object-cover shadow mb-3 border-4 border-white" />
+                        <h4 class="text-lg font-bold text-teal-800 mb-1">Dr. Farah Malik</h4>
+                        <span class="text-teal-600 font-semibold mb-3">CEO</span>
+                        <p class="text-teal-700 text-center text-sm">Visionary leader with 20+ years in pharma
+                            innovation, driving our mission for better global health.</p>
+                        <div class="flex gap-3 mt-3">
+                            <a href="#" aria-label="LinkedIn" class="text-teal-600 hover:text-teal-800"><svg
+                                    class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.998 3A2.005 2.005 0 0 1 22 5v14a2.005 2.005 0 0 1-2.002 2H4.002A2.004 2.004 0 0 1 2 19V5c0-1.104.894-2 2.002-2h15.996zm-12 16V9.998H5V19h2.998zm-1.499-10.25c-.966 0-1.75-.792-1.75-1.75s.784-1.75 1.75-1.75c.967 0 1.75.792 1.75 1.75s-.783 1.75-1.75 1.75zM19 19v-5.498c0-2.473-2.63-2.286-2.63 0V19h-2.998V9.998h2.998V12c1.396-2.583 5.63-2.777 5.63 2.475V19H19z" />
+                                </svg></a>
+                        </div>
+                    </div>
+                    <div class="bg-teal-50 rounded-2xl shadow-md border border-teal-100 p-9 flex flex-col items-center">
+                        <img src="images/leadership/coo.jpg" alt="Mr. Imran Siddiqui, COO"
+                            class="w-24 h-24 rounded-full object-cover shadow mb-3 border-4 border-white" />
+                        <h4 class="text-lg font-bold text-teal-800 mb-1">Mr. Imran Siddiqui</h4>
+                        <span class="text-teal-600 font-semibold mb-3">COO</span>
+                        <p class="text-teal-700 text-center text-sm">Expert in operational excellence, ensuring top-tier
+                            delivery and compliance.</p>
+                        <div class="flex gap-3 mt-3">
+                            <a href="#" aria-label="LinkedIn" class="text-teal-600 hover:text-teal-800"><svg
+                                    class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.998 3A2.005 2.005 0 0 1 22 5v14a2.005 2.005 0 0 1-2.002 2H4.002A2.004 2.004 0 0 1 2 19V5c0-1.104.894-2 2.002-2h15.996zm-12 16V9.998H5V19h2.998zm-1.499-10.25c-.966 0-1.75-.792-1.75-1.75s.784-1.75 1.75-1.75c.967 0 1.75.792 1.75 1.75s-.783 1.75-1.75 1.75zM19 19v-5.498c0-2.473-2.63-2.286-2.63 0V19h-2.998V9.998h2.998V12c1.396-2.583 5.63-2.777 5.63 2.475V19H19z" />
+                                </svg></a>
+                        </div>
+                    </div>
+                    <div class="bg-teal-50 rounded-2xl shadow-md border border-teal-100 p-9 flex flex-col items-center">
+                        <img src="images/leadership/rd.jpg" alt="Dr. Aisha Khan, Head of R&D"
+                            class="w-24 h-24 rounded-full object-cover shadow mb-3 border-4 border-white" />
+                        <h4 class="text-lg font-bold text-teal-800 mb-1">Dr. Aisha Khan</h4>
+                        <span class="text-teal-600 font-semibold mb-3">Head of R&D</span>
+                        <p class="text-teal-700 text-center text-sm">Leading research with a passion for scientific
+                            discovery and patient well-being.</p>
+                        <div class="flex gap-3 mt-3">
+                            <a href="#" aria-label="LinkedIn" class="text-teal-600 hover:text-teal-800"><svg
+                                    class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.998 3A2.005 2.005 0 0 1 22 5v14a2.005 2.005 0 0 1-2.002 2H4.002A2.004 2.004 0 0 1 2 19V5c0-1.104.894-2 2.002-2h15.996zm-12 16V9.998H5V19h2.998zm-1.499-10.25c-.966 0-1.75-.792-1.75-1.75s.784-1.75 1.75-1.75c.967 0 1.75.792 1.75 1.75s-.783 1.75-1.75 1.75zM19 19v-5.498c0-2.473-2.63-2.286-2.63 0V19h-2.998V9.998h2.998V12c1.396-2.583 5.63-2.777 5.63 2.475V19H19z" />
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="bg-teal-50 py-16">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl font-extrabold text-teal-700 mb-10 text-center font-serif">What Partners Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="bg-white rounded-xl shadow-lg border border-teal-100 p-8 flex flex-col items-center">
+                        <img src="images/testimonials/doctor1.jpg" alt="Dr. Ahmed"
+                            class="w-16 h-16 rounded-full mb-4 object-cover shadow">
+                        <p class="text-teal-800 mb-3 italic">“AXIS Pharmaceutical products consistently exceed
+                            expectations for efficacy and reliability.”</p>
+                        <span class="font-bold text-teal-700">Dr. Ahmed</span>
+                        <span class="text-teal-500 text-xs">Consultant, National Hospital</span>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg border border-teal-100 p-8 flex flex-col items-center">
+                        <img src="images/testimonials/pharmacist1.jpg" alt="Ms. Sara"
+                            class="w-16 h-16 rounded-full mb-4 object-cover shadow">
+                        <p class="text-teal-800 mb-3 italic">“We trust AXIS for quality and prompt service—our patients
+                            are safer for it.”</p>
+                        <span class="font-bold text-teal-700">Ms. Sara</span>
+                        <span class="text-teal-500 text-xs">Chief Pharmacist, City Meds</span>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-lg border border-teal-100 p-8 flex flex-col items-center">
+                        <img src="images/testimonials/patient1.jpg" alt="John Doe"
+                            class="w-16 h-16 rounded-full mb-4 object-cover shadow">
+                        <p class="text-teal-800 mb-3 italic">“Their medicines helped my family—thank you for making a
+                            difference!”</p>
+                        <span class="font-bold text-teal-700">John Doe</span>
+                        <span class="text-teal-500 text-xs">Patient</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-12 px-4 bg-white">
+            <div class="max-w-2xl mx-auto text-center">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-teal-700 mb-4">Partner With Us</h2>
+                <p class="text-teal-800 mb-6">Ready to shape the future of healthcare? Get in touch about collaboration,
+                    distribution, or careers.</p>
+                <a href="contact.html"
+                    class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-10 rounded-full shadow transition">
+                    Contact AXIS Pharmaceutical
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-teal-700 text-white mt-16 pt-12 pb-7">
+        <div
+            class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+            <div class="mb-8 md:mb-0">
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="images/logo.png" alt="AXIS Pharmaceutical Logo" class="w-8 h-8 object-contain" />
+                    <span class="ml-2 font-semibold text-white text-lg tracking-widest whitespace-nowrap">
+                        AXIS <span class="font-normal">PHARMACEUTICAL</span>
+                    </span>
+                </div>
+                <p class="text-teal-100 max-w-sm text-sm mb-2">Delivering safe, effective, and innovative medicines to
+                    improve lives worldwide.</p>
+                <div class="flex space-x-4 mt-3">
+                    <a href="#" aria-label="Facebook" target="_blank" class="hover:text-teal-300 transition"><svg
+                            fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+                            <path
+                                d="M17.525 8.998h-2.026V7.725c0-.482.319-.594.545-.594h1.449V4.625l-1.998-.008c-2.22 0-2.728 1.667-2.728 2.728v1.653H9v2.49h2.197V21h3.303v-9.512h2.022l.321-2.49z" />
+                        </svg></a>
+                    <a href="#" aria-label="Twitter" target="_blank" class="hover:text-teal-300 transition"><svg
+                            fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+                            <path
+                                d="M22.162 5.656c-.793.352-1.645.591-2.541.698a4.464 4.464 0 0 0 1.962-2.462 8.93 8.93 0 0 1-2.824 1.079 4.48 4.48 0 0 0-7.635 4.084A12.74 12.74 0 0 1 3.16 4.98a4.47 4.47 0 0 0 1.389 5.974c-.704-.022-1.366-.216-1.945-.539v.054a4.484 4.484 0 0 0 3.592 4.392 4.474 4.474 0 0 1-2.034.077 4.486 4.486 0 0 0 4.176 3.106A8.978 8.978 0 0 1 2 19.108a12.674 12.674 0 0 0 6.885 2.019c8.267 0 12.794-6.849 12.794-12.793 0-.195-.004-.39-.013-.582A9.234 9.234 0 0 0 24 4.557a8.964 8.964 0 0 1-2.538.694z" />
+                        </svg></a>
+                    <a href="#" aria-label="LinkedIn" target="_blank" class="hover:text-teal-300 transition"><svg
+                            fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+                            <path
+                                d="M19.998 3A2.005 2.005 0 0 1 22 5v14a2.005 2.005 0 0 1-2.002 2H4.002A2.004 2.004 0 0 1 2 19V5c0-1.104.894-2 2.002-2h15.996zm-12 16V9.998H5V19h2.998zm-1.499-10.25c-.966 0-1.75-.792-1.75-1.75s.784-1.75 1.75-1.75c.967 0 1.75.792 1.75 1.75s-.783 1.75-1.75 1.75zM19 19v-5.498c0-2.473-2.63-2.286-2.63 0V19h-2.998V9.998h2.998V12c1.396-2.583 5.63-2.777 5.63 2.475V19H19z" />
+                        </svg></a>
+                </div>
+            </div>
+            <div class="flex-1 grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
+                <div>
+                    <h4 class="font-bold uppercase text-teal-200 mb-3 tracking-widest">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-teal-100 transition">About</a></li>
+                        <li><a href="products.html" class="hover:text-teal-100 transition">Products</a></li>
+                        <li><a href="#" class="hover:text-teal-100 transition">Careers</a></li>
+                        <li><a href="contact.html" class="hover:text-teal-100 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-teal-200 mb-3 tracking-widest">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="news.html" class="hover:text-teal-100 transition">News</a></li>
+                        <li><a href="#" class="hover:text-teal-100 transition">Certificates</a></li>
+                        <li><a href="#" class="hover:text-teal-100 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-teal-100 transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-teal-200 mb-3 tracking-widest">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><span class="text-teal-50">Email:</span> <a href="mailto:info@axispharma.com"
+                                class="hover:text-teal-100">info@axispharma.com</a></li>
+                        <li><span class="text-teal-50">Phone:</span> <a href="tel:+1234567890"
+                                class="hover:text-teal-100">+1 234 567 890</a></li>
+                        <li><span class="text-teal-50">Location:</span> 123 Pharma Street, City, Country</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mt-10 border-t border-teal-600 pt-5 text-center text-teal-200 text-xs">
+            &copy; 2025 AXIS Pharmaceutical. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

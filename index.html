@@ -42,7 +42,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between">
             <div class="flex items-center gap-2">
                 <img src="images/logo.png" alt="AXIS Pharmaceutical Logo" class="w-30 h-10 object-contain" />
-                <span class="ml-2 font-semibold text-white text-lg tracking-widest whitespace-nowrap">
+                <span class="ml-2 font-semibold text-white text-lg tracking-widest whitespace-nowrap hidden lg:flex sm:block">
                     AXIS <span class="font-normal">PHARMACEUTICAL</span>
                 </span>
             </div>
@@ -138,85 +138,7 @@
         </div>
     </section>
     <!-- About Us Section -->
-    <section class="py-14 px-4 bg-teal-50" id="Products">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- Left: Products and Quality -->
-                <div class="flex flex-col gap-10">
-                    <!-- Products Card -->
-                    <div class="bg-white rounded-2xl shadow-lg p-9 border border-teal-100">
-                        <h2 class="text-3xl font-extrabold text-teal-800 mb-3 font-sans">Our Products</h2>
-                        <p class="text-teal-700 text-lg leading-relaxed font-medium">
-                            AXIS Pharmaceutical delivers a broad range of innovative and high-quality medicines,
-                            including
-                            tablets, capsules, injectables, and specialty formulations. Our products are trusted by
-                            healthcare professionals and patients worldwide for their safety and efficacy.
-                        </p>
-                    </div>
-                    <!-- Quality Assurance Card -->
-                    <div class="bg-white rounded-2xl shadow-lg p-9 border border-teal-100">
-                        <h2 class="text-3xl font-extrabold text-teal-800 mb-3 font-sans">Quality Assurance</h2>
-                        <p class="text-teal-700 text-lg leading-relaxed font-medium">
-                            We maintain the highest quality standards at every step, from research and raw material
-                            sourcing
-                            to manufacturing and packaging. Our state-of-the-art labs and strict quality control
-                            processes
-                            ensure every product meets international regulations and exceeds expectations.
-                        </p>
-                    </div>
-                </div>
-                <!-- Right: Images -->
-                <div class="flex flex-col gap-10">
-                    <!-- Top Right Image (large) -->
-                    <div class="rounded-2xl overflow-hidden shadow-lg border border-teal-100 h-[240px]">
-                        <img src="images/GT5A8102.jpg" alt="Pharmaceutical laboratory"
-                            class="w-full h-full object-cover hover:scale-105 transition duration-500" />
-                    </div>
-                    <!-- Bottom Right Images (2 side-by-side) -->
-                    <div class="grid grid-cols-2 gap-10 mt-4">
-                        <div class="rounded-2xl overflow-hidden shadow-lg border border-teal-100 h-[245px]">
-                            <img src="images/gallery/gallery-3.jpg" alt="Medicine production"
-                                class="w-full h-full object-cover hover:scale-105 transition duration-500" />
-                        </div>
-                        <div class="rounded-2xl overflow-hidden shadow-lg border border-teal-100 h-[245px]">
-                            <img src="images/gallery/gallery-4.jpg" alt="Lab analysis"
-                                class="w-full h-full object-cover hover:scale-105 transition duration-500" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- News Marquee -->
-            <div class="mt-12">
-                <div class="bg-teal-700 rounded-2xl overflow-hidden shadow border border-teal-100">
-                    <div class="flex items-center gap-6 h-[62px] px-0 relative">
-                        <!-- Label -->
-                        <span
-                            class="flex-none font-bold text-lg font-sans uppercase px-8 border-r-2 border-white text-teal-200 tracking-wider"
-                            style="letter-spacing: 0.08em; height: 62px; display: flex; align-items: center;">
-                            Quotes
-                        </span>
-                        <!-- Marquee -->
-                        <div class="flex-1 overflow-hidden relative h-[24px] flex items-center pl-4">
-                            <div class="absolute left-0 top-0 w-10 h-full z-10 pointer-events-none"
-                                style="background: linear-gradient(to right, #0f766e 60%, transparent 100%);"></div>
-                            <ul class="marquee-content flex gap-[60px] list-none p-0 m-0 min-w-full whitespace-nowrap">
-                                <li class="font-semibold text-base font-sans text-teal-50 uppercase tracking-wide">
-                                    Our commitment to safe & effective Pharmaceuticals.
-
-                                </li>
-                                <li class="font-semibold text-base font-sans text-teal-50 uppercase tracking-wide">
-                                    Empowering healthier lives through science & dedication
-                                </li>
-                                <li class="font-semibold text-base font-sans text-teal-50 uppercase tracking-wide">
-                                    Innovating healthcare for a better tomorrow.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
     <section id="about" class="w-full bg-gradient-to-br from-teal-50 via-white to-teal-100 py-20 px-4">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-14 md:gap-20">
             <!-- About Text -->
@@ -330,6 +252,86 @@
                 height: 100%;
             }
         </style>
+
+    </section>
+    <section class="py-14 px-4 bg-teal-50" id="Products">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <!-- Left: Products and Quality -->
+                <div class="flex flex-col gap-10">
+                    <!-- Products Card -->
+                    <div class="bg-white rounded-2xl shadow-lg p-9 border border-teal-100">
+                        <h2 class="text-3xl font-extrabold text-teal-800 mb-3 font-sans">Our Products</h2>
+                        <p class="text-teal-700 text-lg leading-relaxed font-medium">
+                            AXIS Pharmaceutical delivers a broad range of innovative and high-quality medicines,
+                            including
+                            tablets, capsules, injectables, and specialty formulations. Our products are trusted by
+                            healthcare professionals and patients worldwide for their safety and efficacy.
+                        </p>
+                    </div>
+                    <!-- Quality Assurance Card -->
+                    <div class="bg-white rounded-2xl shadow-lg p-9 border border-teal-100">
+                        <h2 class="text-3xl font-extrabold text-teal-800 mb-3 font-sans">Quality Assurance</h2>
+                        <p class="text-teal-700 text-lg leading-relaxed font-medium">
+                            We maintain the highest quality standards at every step, from research and raw material
+                            sourcing
+                            to manufacturing and packaging. Our state-of-the-art labs and strict quality control
+                            processes
+                            ensure every product meets international regulations and exceeds expectations.
+                        </p>
+                    </div>
+                </div>
+                <!-- Right: Images -->
+                <div class="flex flex-col gap-10">
+                    <!-- Top Right Image (large) -->
+                    <div class="rounded-2xl overflow-hidden shadow-lg border border-teal-100 h-[240px]">
+                        <img src="images/GT5A8102.jpg" alt="Pharmaceutical laboratory"
+                            class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                    </div>
+                    <!-- Bottom Right Images (2 side-by-side) -->
+                    <div class="grid grid-cols-2 gap-10 mt-4">
+                        <div class="rounded-2xl overflow-hidden shadow-lg border border-teal-100 h-[245px]">
+                            <img src="images/gallery/gallery-3.jpg" alt="Medicine production"
+                                class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                        </div>
+                        <div class="rounded-2xl overflow-hidden shadow-lg border border-teal-100 h-[245px]">
+                            <img src="images/gallery/gallery-4.jpg" alt="Lab analysis"
+                                class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- News Marquee -->
+            <div class="mt-12">
+                <div class="bg-teal-700 rounded-2xl overflow-hidden shadow border border-teal-100">
+                    <div class="flex items-center gap-6 h-[62px] px-0 relative">
+                        <!-- Label -->
+                        <span
+                            class="flex-none font-bold text-lg font-sans uppercase px-8 border-r-2 border-white text-teal-200 tracking-wider"
+                            style="letter-spacing: 0.08em; height: 62px; display: flex; align-items: center;">
+                            Quotes
+                        </span>
+                        <!-- Marquee -->
+                        <div class="flex-1 overflow-hidden relative h-[24px] flex items-center pl-4">
+                            <div class="absolute left-0 top-0 w-10 h-full z-10 pointer-events-none"
+                                style="background: linear-gradient(to right, #0f766e 60%, transparent 100%);"></div>
+                            <ul class="marquee-content flex gap-[60px] list-none p-0 m-0 min-w-full whitespace-nowrap">
+                                <li class="font-semibold text-base font-sans text-teal-50 uppercase tracking-wide">
+                                    Our commitment to safe & effective Pharmaceuticals.
+    
+                                </li>
+                                <li class="font-semibold text-base font-sans text-teal-50 uppercase tracking-wide">
+                                    Empowering healthier lives through science & dedication
+                                </li>
+                                <li class="font-semibold text-base font-sans text-teal-50 uppercase tracking-wide">
+                                    Innovating healthcare for a better tomorrow.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <section class="w-full bg-white py-16 px-4">
         <div class="max-w-6xl mx-auto text-center mb-12">
