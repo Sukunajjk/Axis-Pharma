@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Research & Manufacturing | AXIS Pharmaceutical</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-white m-0 min-h-screen">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#4badae] rounded-b-xl shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="images/logo.png" alt="AXIS Pharmaceutical Logo" class="w-30 h-10 object-contain" />
+                <span class="ml-2 font-semibold text-white text-lg tracking-widest whitespace-nowrap hidden lg:flex sm:block">
+                    AXIS <span class="font-normal">PHARMACEUTICAL</span>
+                </span>
+            </div>
+            <div class="lg:hidden">
+                <button id="navbar-toggle" class="text-white focus:outline-none">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                    </svg>
+                </button>
+            </div>
+            <div id="navbar-menu" class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="text-white font-medium hover:text-teal-200 transition-colors">Home</a>
+                <a href="about.html" class="text-white font-medium hover:text-teal-200 transition-colors">About</a>
+                <a href="products.html" class="text-white font-medium hover:text-teal-200 transition-colors">Products</a>
+                <a href="news.html" class="text-white font-medium hover:text-teal-200 transition-colors">News</a>
+                <a href="research.html" class="text-white font-medium hover:text-teal-200 transition-colors">Research & Manufacturing</a>
+                <a href="#contact"
+                    class="ml-0 lg:ml-6 border border-white rounded-full px-5 py-1.5 text-white font-medium hover:bg-white hover:text-teal-600 transition-colors">Contact</a>
+            </div>
+        </div>
+        <div id="navbar-mobile" class="lg:hidden hidden px-4 pb-4 flex flex-col gap-2">
+            <a href="index.html" class="text-white font-medium hover:text-teal-200 transition-colors">Home</a>
+            <a href="about.html" class="text-white font-medium hover:text-teal-200 transition-colors">About</a>
+            <a href="products.html" class="text-white font-medium hover:text-teal-200 transition-colors">Products</a>
+            <a href="news.html" class="text-white font-medium hover:text-teal-200 transition-colors">News</a>
+            <a href="research.html" class="text-white font-medium hover:text-teal-200 transition-colors">Research & Manufacturing</a>
+            <a href="#contact"
+                class="border border-white rounded-full px-5 py-1.5 text-white font-medium hover:bg-white hover:text-teal-600 transition-colors">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="w-full pt-36 pb-16 bg-gradient-to-br from-teal-50 via-white to-teal-100 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-72 h-72 bg-teal-200 rounded-full opacity-20 blur-2xl" style="z-index:0"></div>
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10 md:gap-24 relative z-10">
+            <div class="md:w-7/12">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-teal-700 mb-5 font-serif tracking-tight drop-shadow-md">
+                    Redefining Research & Manufacturing Excellence
+                </h1>
+                <p class="text-teal-800 text-xl md:text-2xl mb-8 font-light tracking-wide">
+                    Innovation is not a department—it's our DNA. At AXIS Pharmaceutical, we create the future of medicine, integrating frontier science, advanced technology, and ethical stewardship for a healthier world.
+                </p>
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <span class="inline-block bg-white/80 border border-teal-200 rounded-full px-6 py-2 text-teal-700 font-medium shadow">AI-Driven Drug Discovery</span>
+                    <span class="inline-block bg-white/80 border border-teal-200 rounded-full px-6 py-2 text-teal-700 font-medium shadow">Automated GMP Facilities</span>
+                    <span class="inline-block bg-white/80 border border-teal-200 rounded-full px-6 py-2 text-teal-700 font-medium shadow">Global Regulatory Leadership</span>
+                </div>
+            </div>
+            <div class="md:w-5/12 flex justify-center">
+                <div class="relative">
+                    <img src="images/gallery/gallery-4.jpg" alt="Research & Manufacturing" class="rounded-2xl shadow-2xl border-4 border-teal-100 w-96 h-96 md:w-[430px] md:h-[430px] object-cover"/>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/80 px-6 py-2 rounded-full shadow text-teal-800 text-lg font-bold border border-teal-200">
+                        Pioneering Tomorrow’s Therapies
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Research Philosophy -->
+    <section class="py-20 px-4 bg-white border-b border-teal-50">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-teal-700 mb-6 font-serif tracking-tight">Our Research Philosophy</h2>
+            <p class="text-gray-800 text-xl md:text-2xl mb-7 font-light">
+                “We do not chase trends—<span class="text-teal-600 font-semibold">we set them</span>. Our research philosophy is rooted in scientific curiosity, rigor, and an unwavering commitment to patient impact.”
+            </p>
+        </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mt-14">
+            <div class="bg-gradient-to-br from-teal-50 to-white border border-teal-100 rounded-2xl shadow-lg p-10 text-center hover:scale-105 transition-transform">
+                <svg class="mx-auto w-12 h-12 text-teal-600 mb-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M7 3v6a7 7 0 0010 0V3"/><path d="M12 15v5"/><circle cx="12" cy="20" r="1"/></svg>
+                <h3 class="text-2xl font-bold text-teal-800 mb-3">Translational Science</h3>
+                <p class="text-teal-700 text-lg font-medium">From molecule to market, we bridge the gap between discovery and patient care, accelerating the translation of breakthroughs into real therapies.</p>
+            </div>
+            <div class="bg-gradient-to-br from-teal-50 to-white border border-teal-100 rounded-2xl shadow-lg p-10 text-center hover:scale-105 transition-transform">
+                <svg class="mx-auto w-12 h-12 text-teal-600 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3.5 3 8.5 0 12-3-3.5-3-8.5 0-12z"/></svg>
+                <h3 class="text-2xl font-bold text-teal-800 mb-3">Global Collaboration</h3>
+                <p class="text-teal-700 text-lg font-medium">We unite with leading universities, biotech startups, and clinical partners on five continents—making innovation borderless and scalable.</p>
+            </div>
+            <div class="bg-gradient-to-br from-teal-50 to-white border border-teal-100 rounded-2xl shadow-lg p-10 text-center hover:scale-105 transition-transform">
+                <svg class="mx-auto w-12 h-12 text-teal-600 mb-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 8h8M8 12h4"/><circle cx="18" cy="18" r="2"/></svg>
+                <h3 class="text-2xl font-bold text-teal-800 mb-3">Ethics & Sustainability</h3>
+                <p class="text-teal-700 text-lg font-medium">Every project is underpinned by the highest standards of ethics, transparency, and environmental responsibility.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovation in Action -->
+    <section class="py-24 px-4 bg-gradient-to-br from-white via-teal-50 to-white border-b border-teal-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-14 md:gap-20">
+            <div class="md:w-6/12 flex flex-col gap-8">
+                <h2 class="text-4xl font-extrabold text-teal-700 mb-2 font-serif">Innovation in Action</h2>
+                <p class="text-gray-800 text-lg mb-3">
+                    <span class="font-bold text-teal-700">AI-Driven Drug Discovery:</span> Our proprietary algorithms and machine learning models reduce years of research into months, predicting molecular interactions and optimizing compound libraries with unparalleled accuracy.
+                </p>
+                <p class="text-gray-800 text-lg mb-3">
+                    <span class="font-bold text-teal-700">Precision Medicine Platforms:</span> We develop targeted therapies utilizing genomics, proteomics, and real-world evidence, ensuring every product is tailored for maximum efficacy and minimal side effects.
+                </p>
+                <p class="text-gray-800 text-lg mb-3">
+                    <span class="font-bold text-teal-700">Open Science Initiatives:</span> AXIS leads multi-institutional consortia, sharing data and protocols to accelerate rare disease research and pandemic preparedness worldwide.
+                </p>
+                <ul class="list-disc text-teal-700 pl-5 mb-3">
+                    <li>High-throughput screening (HTS) and CRISPR-powered gene editing labs</li>
+                    <li>Advanced biostatistics and big data analytics</li>
+                    <li>Patient-centric clinical trial design and global regulatory consulting</li>
+                </ul>
+            </div>
+            <div class="md:w-6/12 flex flex-col gap-8">
+                <img src="images/gallery/gallery-8.jpg" alt="Innovation in Action" class="rounded-2xl shadow-2xl border-4 border-teal-100 w-full h-96 object-cover"/>
+                <div class="bg-white/90 border border-teal-100 rounded-2xl shadow-lg p-6 mt-8">
+                    <h3 class="text-xl font-bold text-teal-800 mb-2">Research Milestone</h3>
+                    <p class="text-teal-700">2025: AXIS Pharmaceutical publishes the world’s first open-access AI-predicted antibiotic compound database, now referenced by 60+ global labs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Leadership -->
+    <section id="manufacturing" class="py-24 px-4 bg-white border-b border-teal-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-14 md:gap-20">
+            <div class="md:w-1/2">
+                <img src="images/GT5A8102.jpg" alt="Manufacturing Leadership" class="rounded-2xl shadow-2xl border-4 border-teal-100 w-full h-96 object-cover"/>
+            </div>
+            <div class="md:w-1/2 flex flex-col gap-8">
+                <h2 class="text-4xl font-extrabold text-teal-700 mb-2 font-serif">Manufacturing Leadership</h2>
+                <p class="text-gray-800 text-lg mb-3">
+                    AXIS manufacturing is a global benchmark—where technology, precision, and quality intersect:
+                </p>
+                <ul class="list-disc text-teal-700 pl-5 mb-3">
+                    <li>100% GMP, ISO, and WHO-certified mega-facilities</li>
+                    <li>Robotics-driven clean rooms & zero-touch production for sterile injectables</li>
+                    <li>Real-time batch monitoring and blockchain-powered supply chain traceability</li>
+                    <li>In-house engineering teams for rapid prototyping and scale-up</li>
+                    <li>Environmentally optimized operations—water recycling, green energy, and carbon-neutral goals</li>
+                </ul>
+                <p class="text-gray-800 text-lg">
+                    Our teams undergo rigorous ongoing training, and we invest in proprietary digital twins for predictive maintenance and process optimization. AXIS is trusted by global regulatory agencies for its transparent manufacturing and rapid-response capabilities in public health crises.
+                </p>
+            </div>
+        </div>
+        <div class="max-w-5xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-teal-50 rounded-2xl shadow-lg border border-teal-100 p-9 flex flex-col">
+                <h3 class="text-2xl font-bold text-teal-800 mb-3 font-sans">Digital Labs & Automation</h3>
+                <p class="text-teal-700 text-lg font-medium">
+                    From digital batch records to AI-powered predictive maintenance, every aspect of our manufacturing lifecycle is digitized for reliability and regulatory compliance.
+                </p>
+            </div>
+            <div class="bg-teal-50 rounded-2xl shadow-lg border border-teal-100 p-9 flex flex-col">
+                <h3 class="text-2xl font-bold text-teal-800 mb-3 font-sans">Sustainability & Stewardship</h3>
+                <p class="text-teal-700 text-lg font-medium">
+                    Our facilities operate with solar arrays, closed-loop water systems, and waste-to-energy conversion, ensuring that every pill and vial leaves a positive legacy for the planet.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our People & Culture -->
+    <section class="py-24 px-4 bg-gradient-to-br from-teal-50 via-white to-teal-100">
+        <div class="max-w-6xl mx-auto text-center mb-14">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-teal-700 mb-4 font-serif tracking-tight">Our People, Our Culture</h2>
+            <p class="text-gray-800 text-xl md:text-2xl font-light">
+                Great science starts with great people. Our diverse teams of researchers, engineers, operators, and strategists are united by an unyielding spirit to change the world for the better.
+            </p>
+        </div>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="p-8 bg-white/90 rounded-2xl border border-teal-100 shadow-xl text-center">
+                <img src="images/testimonials/testimonials-2.jpg" alt="Research Team" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover shadow">
+                <h3 class="text-xl font-bold text-teal-800 mb-2">Diversity in Discovery</h3>
+                <p class="text-teal-700 font-medium">Our scientific teams represent 15+ nationalities, dozens of disciplines, and a shared mission of societal impact. We believe diverse minds create breakthrough solutions.</p>
+            </div>
+            <div class="p-8 bg-white/90 rounded-2xl border border-teal-100 shadow-xl text-center">
+                <img src="images/testimonials/testimonials-1.jpg" alt="Manufacturing Team" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover shadow">
+                <h3 class="text-xl font-bold text-teal-800 mb-2">Continuous Learning</h3>
+                <p class="text-teal-700 font-medium">We nurture curiosity through global training, leadership development, and an open innovation ecosystem. Every team member is empowered to lead and learn.</p>
+            </div>
+            <div class="p-8 bg-white/90 rounded-2xl border border-teal-100 shadow-xl text-center">
+                <img src="images/testimonials/testimonials-3.jpg" alt="Quality & Compliance" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover shadow">
+                <h3 class="text-xl font-bold text-teal-800 mb-2">Quality & Integrity</h3>
+                <p class="text-teal-700 font-medium">Our teams are recognized for their ethical standards and relentless focus on safety, compliance, and operational excellence at every step.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships & Vision -->
+    <section class="py-24 px-4 bg-white border-b border-teal-50">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row gap-20 items-center">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-teal-700 mb-6 font-serif tracking-tight">Partnerships for Progress</h2>
+                <p class="text-gray-800 text-lg mb-5">
+                    AXIS Pharmaceutical is a trusted partner to hospitals, universities, global NGOs, and pharmaceutical leaders. Our technology transfer programs, open science projects, and capacity-building initiatives accelerate the pace of medical progress worldwide.
+                </p>
+                <ul class="pl-5 list-disc text-teal-700 text-lg mb-5">
+                    <li>Strategic alliances with top-10 global pharma companies</li>
+                    <li>MoUs with world-class academic research centers</li>
+                    <li>Active contributor to WHO and UN health initiatives</li>
+                    <li>Incubator for biotech startups and digital health ventures</li>
+                </ul>
+                <p class="text-gray-800 text-lg">
+                    Our vision is to shape the future of global health through relentless innovation, radical collaboration, and an enduring commitment to people and planet.
+                </p>
+            </div>
+            <div class="md:w-1/2">
+                <img src="images/gallery/gallery-6.jpg" alt="Partnerships" class="rounded-2xl shadow-2xl border-4 border-teal-100 w-full h-96 object-cover"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 px-4 bg-gradient-to-br from-teal-600 to-teal-400">
+        <div class="max-w-4xl mx-auto text-center text-white">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6 font-serif tracking-tight">Join Us in Shaping the Future</h2>
+            <p class="text-lg md:text-xl mb-6 font-light">
+                Whether you are a healthcare innovator, research partner, or passionate talent, AXIS Pharmaceutical invites you to join our journey. Let’s create enduring solutions for generations to come.
+            </p>
+            <a href="mailto:info@axispharma.com" class="inline-block bg-white hover:bg-teal-50 text-teal-700 px-8 py-3 rounded-full font-bold shadow transition">Contact Our Leadership</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-700 text-white mt-16 pt-12 pb-7">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
+            <div class="mb-8 md:mb-0">
+                <div class="flex items-center gap-2 mb-2">
+                    <img src="images/logo.png" alt="AXIS Pharmaceutical Logo" class="w-8 h-8 object-contain" />
+                    <span class="ml-2 font-semibold text-white text-lg tracking-widest whitespace-nowrap">
+                        AXIS <span class="font-normal">PHARMACEUTICAL</span>
+                    </span>
+                </div>
+                <p class="text-teal-100 max-w-sm text-sm mb-2">Delivering safe, effective, and innovative medicines to
+                    improve lives worldwide.</p>
+                <div class="flex space-x-4 mt-3">
+                    <a href="#" aria-label="Facebook" target="_blank" class="hover:text-teal-300 transition"><svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M17.525 8.998h-2.026V7.725c0-.482.319-.594.545-.594h1.449V4.625l-1.998-.008c-2.22 0-2.728 1.667-2.728 2.728v1.653H9v2.49h2.197V21h3.303v-9.512h2.022l.321-2.49z"/></svg></a>
+                    <a href="#" aria-label="Twitter" target="_blank" class="hover:text-teal-300 transition"><svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M22.162 5.656c-.793.352-1.645.591-2.541.698a4.464 4.464 0 0 0 1.962-2.462 8.93 8.93 0 0 1-2.824 1.079 4.48 4.48 0 0 0-7.635 4.084A12.74 12.74 0 0 1 3.16 4.98a4.47 4.47 0 0 0 1.389 5.974c-.704-.022-1.366-.216-1.945-.539v.054a4.484 4.484 0 0 0 3.592 4.392 4.474 4.474 0 0 1-2.034.077 4.486 4.486 0 0 0 4.176 3.106A8.978 8.978 0 0 1 2 19.108a12.674 12.674 0 0 0 6.885 2.019c8.267 0 12.794-6.849 12.794-12.793 0-.195-.004-.39-.013-.582A9.234 9.234 0 0 0 24 4.557a8.964 8.964 0 0 1-2.538.694z"/></svg></a>
+                    <a href="#" aria-label="LinkedIn" target="_blank" class="hover:text-teal-300 transition"><svg fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M19.998 3A2.005 2.005 0 0 1 22 5v14a2.005 2.005 0 0 1-2.002 2H4.002A2.004 2.004 0 0 1 2 19V5c0-1.104.894-2 2.002-2h15.996zm-12 16V9.998H5V19h2.998zm-1.499-10.25c-.966 0-1.75-.792-1.75-1.75s.784-1.75 1.75-1.75c.967 0 1.75.792 1.75 1.75s-.783 1.75-1.75 1.75zM19 19v-5.498c0-2.473-2.63-2.286-2.63 0V19h-2.998V9.998h2.998V12c1.396-2.583 5.63-2.777 5.63 2.475V19H19z"/></svg></a>
+                </div>
+            </div>
+            <div class="flex-1 grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
+                <div>
+                    <h4 class="font-bold uppercase text-teal-200 mb-3 tracking-widest">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="hover:text-teal-100 transition">About</a></li>
+                        <li><a href="products.html" class="hover:text-teal-100 transition">Products</a></li>
+                        <li><a href="#" class="hover:text-teal-100 transition">Careers</a></li>
+                        <li><a href="#contact" class="hover:text-teal-100 transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-teal-200 mb-3 tracking-widest">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="news.html" class="hover:text-teal-100 transition">News</a></li>
+                        <li><a href="#" class="hover:text-teal-100 transition">Certificates</a></li>
+                        <li><a href="#" class="hover:text-teal-100 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-teal-100 transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold uppercase text-teal-200 mb-3 tracking-widest">Contact</h4>
+                    <ul class="space-y-2">
+                        <li><span class="text-teal-50">Email:</span> <a href="mailto:info@axispharma.com"
+                                class="hover:text-teal-100">info@axispharma.com</a></li>
+                        <li><span class="text-teal-50">Phone:</span> <a href="tel:+1234567890"
+                                class="hover:text-teal-100">+1 234 567 890</a></li>
+                        <li><span class="text-teal-50">Location:</span> 123 Pharma Street, City, Country</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mt-10 border-t border-teal-600 pt-5 text-center text-teal-200 text-xs">
+            &copy; 2025 AXIS Pharmaceutical. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Navbar mobile toggle
+        const toggle = document.getElementById('navbar-toggle');
+        const mobile = document.getElementById('navbar-mobile');
+        toggle.addEventListener('click', () => { mobile.classList.toggle('hidden'); });
+    </script>
+</body>
+</html>
