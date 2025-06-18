@@ -8,8 +8,7 @@
     <link rel="icon" type="image/png" href="images/logo.png" />
     <meta name="description"
         content="AXIS Pharmaceutical: Our story, vision, values, and the people behind our mission.">
-            <link rel="stylesheet" href="output.css">
-
+    <link rel="stylesheet" href="output.css">
     <style>
         .pattern-bg {
             background-image: radial-gradient(circle at 40% 0%, rgba(13, 148, 136, 0.08) 0, transparent 70%),
@@ -18,6 +17,39 @@
 
         .timeline-dot {
             box-shadow: 0 0 0 6px #2dd4bf33, 0 0 0 12px #fff;
+        }
+
+        /* Timeline animation */
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(60px) scale(0.98);
+            transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .card-animated {
+            transition: transform 0.35s cubic-bezier(.4, 0, .2, 1), box-shadow 0.35s cubic-bezier(.4, 0, .2, 1), background 0.35s;
+            will-change: transform;
+        }
+
+        .card-animated:hover {
+            transform: scale(1.07) perspective(600px) translateZ(24px);
+         /*   box-shadow: 0 12px 36px 0 rgba(13, 148, 136, 0.18), 0 1.5px 12px 0 #2dd4bf30;
+            background: linear-gradient(120deg, #f0fdff 70%, #ccfbf1 100%); */
+            z-index: 10;
+        }
+
+        .team-img-animated {
+            transition: transform 0.4s cubic-bezier(.4, 0, .2, 1), box-shadow 0.4s cubic-bezier(.4, 0, .2, 1);
+            will-change: transform;
+        }
+
+        .card-animated:hover .team-img-animated {
+            transform: scale(1) perspective(600px) translateZ(32px);
         }
     </style>
 </head>
@@ -75,8 +107,8 @@
                 </div>
                 <div class="md:w-2/5 flex justify-center relative">
                     <div class="rounded-2xl overflow-hidden border-4 border-teal-200 shadow-xl">
-                        <img src="images/gallery/gallery-3.jpg"
-                            alt="AXIS Pharmaceuticals Laboratory" class="object-cover h-72 w-72 md:w-80 md:h-80" />
+                        <img src="images/gallery/gallery-3.jpg" alt="AXIS Pharmaceuticals Laboratory"
+                            class="object-cover h-72 w-72 md:w-80 md:h-80" />
                     </div>
                     <svg class="absolute -bottom-6 -right-6 w-20 h-20 text-teal-200 opacity-30 rotate-12"
                         fill="currentColor" viewBox="0 0 400 400">
@@ -91,29 +123,28 @@
             <div class="max-w-5xl mx-auto">
                 <h2 class="text-3xl font-extrabold text-teal-700 text-center mb-10 font-serif">Our Journey</h2>
                 <div class="relative border-l-4 border-teal-200 pl-10 ml-6">
-                    <!-- Timeline Item -->
-                    <div class="mb-10 relative">
+                    <div class="mb-10 relative timeline-item">
                         <span
                             class="absolute -left-6 top-1 timeline-dot w-6 h-6 rounded-full bg-teal-500 border-4 border-white"></span>
                         <h4 class="text-xl font-bold text-teal-800 mb-1">2009</h4>
                         <p class="text-teal-700">AXIS Pharmaceutical was founded with a vision for universally
                             accessible healthcare.</p>
                     </div>
-                    <div class="mb-10 relative">
+                    <div class="mb-10 relative timeline-item">
                         <span
                             class="absolute -left-6 top-1 timeline-dot w-6 h-6 rounded-full bg-teal-500 border-4 border-white"></span>
                         <h4 class="text-xl font-bold text-teal-800 mb-1">2012</h4>
                         <p class="text-teal-700">First GMP-certified manufacturing plant launches, ensuring global
                             standards from day one.</p>
                     </div>
-                    <div class="mb-10 relative">
+                    <div class="mb-10 relative timeline-item">
                         <span
                             class="absolute -left-6 top-1 timeline-dot w-6 h-6 rounded-full bg-teal-500 border-4 border-white"></span>
                         <h4 class="text-xl font-bold text-teal-800 mb-1">2017</h4>
                         <p class="text-teal-700">Launched specialty medicines for chronic and rare conditions, expanding
                             our impact.</p>
                     </div>
-                    <div class="mb-10 relative">
+                    <div class="mb-10 relative timeline-item">
                         <span
                             class="absolute -left-6 top-1 timeline-dot w-6 h-6 rounded-full bg-teal-500 border-4 border-white"></span>
                         <h4 class="text-xl font-bold text-teal-800 mb-1">2023</h4>
@@ -129,7 +160,8 @@
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-3xl font-extrabold text-teal-700 text-center mb-12 font-serif">Why Choose AXIS?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-                    <div class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center card-animated">
                         <div class="mb-4 p-4 bg-teal-100 rounded-full shadow-inner">
                             <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="2.2"
                                 viewBox="0 0 24 24">
@@ -141,7 +173,8 @@
                         <p class="text-teal-700 text-center text-sm">GMP, ISO, and Halal certifications for
                             uncompromising global standards.</p>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center card-animated">
                         <div class="mb-4 p-4 bg-teal-100 rounded-full shadow-inner">
                             <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="2.2"
                                 viewBox="0 0 24 24">
@@ -153,7 +186,8 @@
                         <p class="text-teal-700 text-center text-sm">Supplying medicine to over 40 countries and
                             improving millions of lives.</p>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center card-animated">
                         <div class="mb-4 p-4 bg-teal-100 rounded-full shadow-inner">
                             <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="2.2"
                                 viewBox="0 0 24 24">
@@ -164,7 +198,8 @@
                         <p class="text-teal-700 text-center text-sm">Constantly advancing science for new, more
                             effective therapies.</p>
                     </div>
-                    <div class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center">
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-teal-100 p-7 flex flex-col items-center card-animated">
                         <div class="mb-4 p-4 bg-teal-100 rounded-full shadow-inner">
                             <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" stroke-width="2.2"
                                 viewBox="0 0 24 24">
@@ -185,9 +220,10 @@
             <div class="max-w-6xl mx-auto">
                 <h2 class="text-3xl font-extrabold text-teal-700 mb-10 text-center font-serif">Leadership</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="bg-teal-50 rounded-2xl shadow-md border border-teal-100 p-9 flex flex-col items-center">
+                    <div
+                        class="bg-teal-50 rounded-2xl shadow-md border border-teal-100 p-9 flex flex-col items-center card-animated">
                         <img src="images/testimonials/testimonials-2.jpg" alt="Dr. Farah Malik, CEO"
-                            class="w-24 h-24 rounded-full object-cover shadow mb-3 border-4 border-white" />
+                            class="w-24 h-24 rounded-full object-cover shadow mb-3 border-4 border-white team-img-animated" />
                         <h4 class="text-lg font-bold text-teal-800 mb-1">Dr. Farah Malik</h4>
                         <span class="text-teal-600 font-semibold mb-3">CEO</span>
                         <p class="text-teal-700 text-center text-sm">Visionary leader with 20+ years in pharma
@@ -200,9 +236,10 @@
                                 </svg></a>
                         </div>
                     </div>
-                    <div class="bg-teal-50 rounded-2xl shadow-md border border-teal-100 p-9 flex flex-col items-center">
+                    <div
+                        class="bg-teal-50 rounded-2xl shadow-md border border-teal-100 p-9 flex flex-col items-center card-animated">
                         <img src="images/testimonials/testimonials-4.jpg" alt="Mr. Imran Siddiqui, COO"
-                            class="w-24 h-24 rounded-full object-cover shadow mb-3 border-4 border-white" />
+                            class="w-24 h-24 rounded-full object-cover shadow mb-3 border-4 border-white team-img-animated" />
                         <h4 class="text-lg font-bold text-teal-800 mb-1">Mr. Imran Siddiqui</h4>
                         <span class="text-teal-600 font-semibold mb-3">COO</span>
                         <p class="text-teal-700 text-center text-sm">Expert in operational excellence, ensuring top-tier
@@ -215,9 +252,10 @@
                                 </svg></a>
                         </div>
                     </div>
-                    <div class="bg-teal-50 rounded-2xl shadow-md border border-teal-100 p-9 flex flex-col items-center">
+                    <div
+                        class="bg-teal-50 rounded-2xl shadow-md border border-teal-100 p-9 flex flex-col items-center card-animated">
                         <img src="images/testimonials/testimonials-3.jpg" alt="Dr. Aisha Khan, Head of R&D"
-                            class="w-24 h-24 rounded-full object-cover shadow mb-3 border-4 border-white" />
+                            class="w-24 h-24 rounded-full object-cover shadow mb-3 border-4 border-white team-img-animated" />
                         <h4 class="text-lg font-bold text-teal-800 mb-1">Dr. Aisha Khan</h4>
                         <span class="text-teal-600 font-semibold mb-3">Head of R&D</span>
                         <p class="text-teal-700 text-center text-sm">Leading research with a passion for scientific
@@ -239,7 +277,8 @@
             <div class="max-w-5xl mx-auto">
                 <h2 class="text-3xl font-extrabold text-teal-700 mb-10 text-center font-serif">What Partners Say</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                    <div class="bg-white rounded-xl shadow-lg border border-teal-100 p-8 flex flex-col items-center">
+                    <div
+                        class="bg-white rounded-xl shadow-lg border border-teal-100 p-8 flex flex-col items-center card-animated">
                         <img src="images/testimonials/testimonials-1.jpg" alt="Dr. Ahmed"
                             class="w-16 h-16 rounded-full mb-4 object-cover shadow">
                         <p class="text-teal-800 mb-3 italic">“AXIS Pharmaceutical products consistently exceed
@@ -247,7 +286,8 @@
                         <span class="font-bold text-teal-700">Dr. Ahmed</span>
                         <span class="text-teal-500 text-xs">Consultant, National Hospital</span>
                     </div>
-                    <div class="bg-white rounded-xl shadow-lg border border-teal-100 p-8 flex flex-col items-center">
+                    <div
+                        class="bg-white rounded-xl shadow-lg border border-teal-100 p-8 flex flex-col items-center card-animated">
                         <img src="images/testimonials/testimonials-3.jpg" alt="Ms. Sara"
                             class="w-16 h-16 rounded-full mb-4 object-cover shadow">
                         <p class="text-teal-800 mb-3 italic">“We trust AXIS for quality and prompt service—our patients
@@ -255,7 +295,8 @@
                         <span class="font-bold text-teal-700">Ms. Sara</span>
                         <span class="text-teal-500 text-xs">Chief Pharmacist, City Meds</span>
                     </div>
-                    <div class="bg-white rounded-xl shadow-lg border border-teal-100 p-8 flex flex-col items-center">
+                    <div
+                        class="bg-white rounded-xl shadow-lg border border-teal-100 p-8 flex flex-col items-center card-animated">
                         <img src="images/testimonials/testimonials-5.jpg" alt="John Doe"
                             class="w-16 h-16 rounded-full mb-4 object-cover shadow">
                         <p class="text-teal-800 mb-3 italic">“Their medicines helped my family—thank you for making a
@@ -348,6 +389,21 @@
             &copy; 2025 AXIS Pharmaceutical. All rights reserved.
         </div>
     </footer>
+    <script>
+        // Timeline scroll-in animation
+        function handleTimelineAnimation() {
+            const items = document.querySelectorAll('.timeline-item');
+            const triggerBottom = window.innerHeight * 0.82;
+            items.forEach((el, i) => {
+                const boxTop = el.getBoundingClientRect().top;
+                if (boxTop < triggerBottom) {
+                    setTimeout(() => el.classList.add('visible'), i * 120);
+                }
+            });
+        }
+        window.addEventListener('scroll', handleTimelineAnimation);
+        window.addEventListener('DOMContentLoaded', handleTimelineAnimation);
+    </script>
 </body>
 
 </html>
