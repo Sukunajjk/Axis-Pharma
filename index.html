@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
+        html {
+  scroll-behavior: smooth;
+}
         .fade {
             transition: opacity 0.8s;
             opacity: 0;
@@ -35,6 +38,85 @@
                 transform: translateX(-150%);
             }
         }
+        .swiper {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            padding-bottom: 3rem;
+        }
+        .swiper-slide {
+            background: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 36px 0 rgba(13, 148, 136, 0.16), 0 1.5px 12px 0 #2dd4bf15;
+            border: 1px solid #ccfbf1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            transition: box-shadow .3s, transform .3s;
+            will-change: transform;
+        }
+        .swiper-slide-active {
+            box-shadow: 0 18px 46px 0 #14b8a650, 0 2px 18px 0 #2dd4bf30;
+            transform: scale(1.05);
+            z-index: 2;
+        }
+        .news-img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+        .swiper-pagination-bullet-active {
+            background: #14b8a6 !important;
+        }
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #14b8a6;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 8px #14b8a622;
+            font-size: 16px;
+            transition: background 0.2s, box-shadow 0.2s;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
+            background: #14b8a6;
+            color: #fff;
+            box-shadow: 0 4px 16px #14b8a633;
+        }
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 16px !important;
+        }
+        .swiper-button-next { right: 10px; }
+        .swiper-button-prev { left: 10px; }
+        @media (max-width: 640px) {
+            .swiper {
+                max-width: 95vw;
+            }
+            .news-img {
+                height: 160px;
+            }
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 26px;
+                height: 26px;
+            }
+            .swiper-button-next { right: 2px; }
+            .swiper-button-prev { left: 2px; }
+        }
+        .animate-fadeIn {
+            animation: fadeIn .3s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(32px);}
+            to   { opacity: 1; transform: translateY(0);}
+        }
     </style>
 </head>
 
@@ -60,7 +142,7 @@
                 <a href="about.html" class="text-white font-medium hover:text-teal-200 transition-colors">About</a>
                 <a href="products.html"
                     class="text-white font-medium hover:text-teal-200 transition-colors">Products</a>
-                <a href="News" class="text-white font-medium hover:text-teal-200 transition-colors">News</a>
+                <a href="#news-events" class="text-white font-medium hover:text-teal-200 transition-colors">News</a>
                 <a href="#contact"
                     class="ml-0 lg:ml-6 border border-white rounded-full px-5 py-1.5 text-white font-medium hover:bg-white hover:text-teal-600 transition-colors">Contact</a>
             </div>
@@ -69,7 +151,7 @@
             <a href="index.html" class="text-white font-medium hover:text-teal-200 transition-colors">Home</a>
             <a href="about.html" class="text-white font-medium hover:text-teal-200 transition-colors">About</a>
             <a href="products.html" class="text-white font-medium hover:text-teal-200 transition-colors">Products</a>
-            <a href="#" class="text-white font-medium hover:text-teal-200 transition-colors">News</a>
+            <a href="#news-events" class="text-white font-medium hover:text-teal-200 transition-colors">News</a>
             <a href="#contact"
                 class="border border-white rounded-full px-5 py-1.5 text-white font-medium hover:bg-white hover:text-teal-600 transition-colors">Contact</a>
         </div>
@@ -491,187 +573,174 @@
             </div>
         </div>
     </section>
-    <section class="flex-1 pt-32">
-        <!-- Page Hero -->
-        <section class="pattern-bg py-14 px-4">
-            <div class="max-w-3xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl font-extrabold text-teal-800 mb-4">Latest News & Events</h1>
-                <p class="text-teal-700 text-lg mb-3">Discover our latest achievements, events, and press coverage.</p>
+    <section class="py-16 px-4 bg-white/80" id="news-events">
+        <div class="max-w-4xl mx-auto mb-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-teal-700 mb-3 tracking-tight">Latest News & Events</h2>
+            <p class="text-lg md:text-xl text-teal-900 font-medium">
+                Discover our latest achievements, events, and press coverage.
+            </p>
+        </div>
+        <div class="swiper newsSwiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="images/news/news-1.jpg" alt="AXIS Launches New Diabetes Drug" class="news-img" />
+                    <div class="p-6 flex-1 flex flex-col">
+                        <span
+                            class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">Product
+                            Launch</span>
+                        <h3 class="text-xl font-bold text-teal-800 mb-2">AXIS Launches Breakthrough Diabetes Drug</h3>
+                        <p class="text-teal-700 mb-4">June 2025 &middot; Our new oral medication improves glycemic control
+                            with fewer side effects.</p>
+                        <button data-news="1" class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read
+                            more &rarr;</button>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="images/news/news-2.jpg" alt="Q2 2025 Investor Call" class="news-img" />
+                    <div class="p-6 flex-1 flex flex-col">
+                        <span
+                            class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">Event</span>
+                        <h3 class="text-xl font-bold text-teal-800 mb-2">Q2 2025 Investor Call Announced</h3>
+                        <p class="text-teal-700 mb-4">May 2025 &middot; Join our leadership team for insights into our
+                            growth, pipeline, and milestones. Register online to attend.</p>
+                        <button data-news="2" class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read
+                            more &rarr;</button>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="images/gallery/gallery-8.jpg" alt="AXIS Wins Pharma Award" class="news-img" />
+                    <div class="p-6 flex-1 flex flex-col">
+                        <span
+                            class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">Award</span>
+                        <h3 class="text-xl font-bold text-teal-800 mb-2">AXIS Wins Global Pharma Award</h3>
+                        <p class="text-teal-700 mb-4">April 2025 &middot; Recognized for excellence in pharmaceutical
+                            innovation and commitment to sustainable practices.</p>
+                        <button data-news="3" class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read
+                            more &rarr;</button>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="swiper-slide">
+                    <img src="images/GT5A8102.jpg" alt="Community Health Fair" class="news-img" />
+                    <div class="p-6 flex-1 flex flex-col">
+                        <span
+                            class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">CSR</span>
+                        <h3 class="text-xl font-bold text-teal-800 mb-2">AXIS Hosts Community Health Fair</h3>
+                        <p class="text-teal-700 mb-4">March 2025 &middot; Free screenings, guidance, and medicines for over
+                            2,000 people in our annual outreach event.</p>
+                        <button data-news="4" class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read
+                            more &rarr;</button>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="swiper-slide">
+                    <img src="images/gallery/gallery-6.jpg" alt="Research Collaboration" class="news-img" />
+                    <div class="p-6 flex-1 flex flex-col">
+                        <span
+                            class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">Research</span>
+                        <h3 class="text-xl font-bold text-teal-800 mb-2">New Collaboration with MedTech Labs</h3>
+                        <p class="text-teal-700 mb-4">February 2025 &middot; Joint research on next-gen biosimilars and
+                            precision medicine. Watch for joint publications soon.</p>
+                        <button data-news="5" class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read
+                            more &rarr;</button>
+                    </div>
+                </div>
             </div>
-        </section>
+            <div class="swiper-pagination mt-4"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
     
-        <!-- News Slider -->
-        <section class="bg-white/80 py-10">
-            <div class="swiper newsSwiper">
-                <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
-                    <div class="swiper-slide">
-                        <img src="images/news/news-1.jpg" alt="AXIS Launches New Diabetes Drug" class="news-img" />
-                        <div class="p-6 flex-1 flex flex-col">
-                            <span
-                                class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">Product
-                                Launch</span>
-                            <h3 class="text-xl font-bold text-teal-800 mb-2">AXIS Launches Breakthrough Diabetes Drug
-                            </h3>
-                            <p class="text-teal-700 mb-4">June 2025 &middot; Our new oral medication improves glycemic
-                                control with fewer side effects.</p>
-                            <button data-news="1"
-                                class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read more
-                                &rarr;</button>
-                        </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="swiper-slide">
-                        <img src="images/news/news-2.jpg" alt="Q2 2025 Investor Call" class="news-img" />
-                        <div class="p-6 flex-1 flex flex-col">
-                            <span
-                                class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">Event</span>
-                            <h3 class="text-xl font-bold text-teal-800 mb-2">Q2 2025 Investor Call Announced</h3>
-                            <p class="text-teal-700 mb-4">May 2025 &middot; Join our leadership team for insights into
-                                our growth, pipeline, and milestones. Register online to attend.</p>
-                            <button data-news="2"
-                                class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read more
-                                &rarr;</button>
-                        </div>
-                    </div>
-                    <!-- Slide 3 -->
-                    <div class="swiper-slide">
-                        <img src="images/gallery/gallery-8.jpg" alt="AXIS Wins Pharma Award" class="news-img" />
-                        <div class="p-6 flex-1 flex flex-col">
-                            <span
-                                class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">Award</span>
-                            <h3 class="text-xl font-bold text-teal-800 mb-2">AXIS Wins Global Pharma Award</h3>
-                            <p class="text-teal-700 mb-4">April 2025 &middot; Recognized for excellence in
-                                pharmaceutical innovation and commitment to sustainable practices.</p>
-                            <button data-news="3"
-                                class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read more
-                                &rarr;</button>
-                        </div>
-                    </div>
-                    <!-- Slide 4 -->
-                    <div class="swiper-slide">
-                        <img src="images/GT5A8102.jpg" alt="Community Health Fair" class="news-img" />
-                        <div class="p-6 flex-1 flex flex-col">
-                            <span
-                                class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">CSR</span>
-                            <h3 class="text-xl font-bold text-teal-800 mb-2">AXIS Hosts Community Health Fair</h3>
-                            <p class="text-teal-700 mb-4">March 2025 &middot; Free screenings, guidance, and medicines
-                                for over 2,000 people in our annual outreach event.</p>
-                            <button data-news="4"
-                                class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read more
-                                &rarr;</button>
-                        </div>
-                    </div>
-                    <!-- Slide 5 -->
-                    <div class="swiper-slide">
-                        <img src="images/gallery/gallery-6.jpg" alt="Research Collaboration" class="news-img" />
-                        <div class="p-6 flex-1 flex flex-col">
-                            <span
-                                class="inline-block bg-teal-100 text-teal-700 text-xs px-3 py-1 rounded-full font-semibold mb-2">Research</span>
-                            <h3 class="text-xl font-bold text-teal-800 mb-2">New Collaboration with MedTech Labs</h3>
-                            <p class="text-teal-700 mb-4">February 2025 &middot; Joint research on next-gen biosimilars
-                                and precision medicine. Watch for joint publications soon.</p>
-                            <button data-news="5"
-                                class="readmore-btn text-teal-600 font-semibold hover:underline mt-auto">Read more
-                                &rarr;</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add Pagination/Navigation -->
-                <div class="swiper-pagination mt-4"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+        <!-- POPUPS (Modals) -->
+        <!-- Modal 1 -->
+        <div id="modal-1" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
+                <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
+                    aria-label="Close">&times;</button>
+                <h2 class="text-2xl font-bold text-teal-800 mb-2">AXIS Launches Breakthrough Diabetes Drug</h2>
+                <p class="text-teal-700 text-sm mb-3">Published: June 2025 | Product Launch</p>
+                <img src="images/news/news-1.jpg" alt="AXIS Launches New Diabetes Drug"
+                    class="rounded-lg mb-4 max-h-56 object-cover w-full" />
+                <p class="text-teal-800 mb-2">
+                    Our new oral diabetes medication offers enhanced glycemic control with reduced side effects,
+                    marking a significant milestone in diabetes care. Developed after years of research, this
+                    formulation is designed to improve patient compliance and quality of life.
+                </p>
+                <p class="text-teal-700">Now available across 25+ countries. Doctors and patients can contact AXIS
+                    for samples and clinical data. <br><br>For more details, please contact our Medical Affairs
+                    team.</p>
             </div>
-    
-            <!-- POPUPS (Modals) -->
-            <!-- Modal 1 -->
-            <div id="modal-1" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
-                <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
-                    <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
-                        aria-label="Close">&times;</button>
-                    <h2 class="text-2xl font-bold text-teal-800 mb-2">AXIS Launches Breakthrough Diabetes Drug</h2>
-                    <p class="text-teal-700 text-sm mb-3">Published: June 2025 | Product Launch</p>
-                    <img src="images/news/news-1.jpg" alt="AXIS Launches New Diabetes Drug"
-                        class="rounded-lg mb-4 max-h-56 object-cover w-full" />
-                    <p class="text-teal-800 mb-2">
-                        Our new oral diabetes medication offers enhanced glycemic control with reduced side effects,
-                        marking a significant milestone in diabetes care. Developed after years of research, this
-                        formulation is designed to improve patient compliance and quality of life.
-                    </p>
-                    <p class="text-teal-700">Now available across 25+ countries. Doctors and patients can contact AXIS
-                        for samples and clinical data. <br><br>For more details, please contact our Medical Affairs
-                        team.</p>
-                </div>
+        </div>
+        <!-- Modal 2 -->
+        <div id="modal-2" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
+                <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
+                    aria-label="Close">&times;</button>
+                <h2 class="text-2xl font-bold text-teal-800 mb-2">Q2 2025 Investor Call Announced</h2>
+                <p class="text-teal-700 text-sm mb-3">Published: May 2025 | Event</p>
+                <img src="images/news/news-2.jpg" alt="Q2 2025 Investor Call"
+                    class="rounded-lg mb-4 max-h-56 object-cover w-full" />
+                <p class="text-teal-800 mb-2">
+                    Join our leadership team for the Q2 2025 Investor Call where we discuss our financial results,
+                    pipeline progress, and future outlook.
+                </p>
+                <p class="text-teal-700">Register online to receive dial-in details and submit questions in advance.
+                </p>
             </div>
-            <!-- Modal 2 -->
-            <div id="modal-2" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
-                <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
-                    <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
-                        aria-label="Close">&times;</button>
-                    <h2 class="text-2xl font-bold text-teal-800 mb-2">Q2 2025 Investor Call Announced</h2>
-                    <p class="text-teal-700 text-sm mb-3">Published: May 2025 | Event</p>
-                    <img src="images/news/news-2.jpg" alt="Q2 2025 Investor Call"
-                        class="rounded-lg mb-4 max-h-56 object-cover w-full" />
-                    <p class="text-teal-800 mb-2">
-                        Join our leadership team for the Q2 2025 Investor Call where we discuss our financial results,
-                        pipeline progress, and future outlook.
-                    </p>
-                    <p class="text-teal-700">Register online to receive dial-in details and submit questions in advance.
-                    </p>
-                </div>
+        </div>
+        <!-- Modal 3 -->
+        <div id="modal-3" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
+                <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
+                    aria-label="Close">&times;</button>
+                <h2 class="text-2xl font-bold text-teal-800 mb-2">AXIS Wins Global Pharma Award</h2>
+                <p class="text-teal-700 text-sm mb-3">Published: April 2025 | Award</p>
+                <img src="images/gallery/gallery-8.jpg" alt="AXIS Wins Pharma Award"
+                    class="rounded-lg mb-4 max-h-56 object-cover w-full" />
+                <p class="text-teal-800 mb-2">
+                    AXIS Pharmaceutical has been recognized for excellence in pharmaceutical innovation and a strong
+                    commitment to sustainable practices at the Global Pharma Awards 2025.
+                </p>
+                <p class="text-teal-700">We thank our teams and partners for making this achievement possible.</p>
             </div>
-            <!-- Modal 3 -->
-            <div id="modal-3" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
-                <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
-                    <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
-                        aria-label="Close">&times;</button>
-                    <h2 class="text-2xl font-bold text-teal-800 mb-2">AXIS Wins Global Pharma Award</h2>
-                    <p class="text-teal-700 text-sm mb-3">Published: April 2025 | Award</p>
-                    <img src="images/gallery/gallery-8.jpg" alt="AXIS Wins Pharma Award"
-                        class="rounded-lg mb-4 max-h-56 object-cover w-full" />
-                    <p class="text-teal-800 mb-2">
-                        AXIS Pharmaceutical has been recognized for excellence in pharmaceutical innovation and a strong
-                        commitment to sustainable practices at the Global Pharma Awards 2025.
-                    </p>
-                    <p class="text-teal-700">We thank our teams and partners for making this achievement possible.</p>
-                </div>
+        </div>
+        <!-- Modal 4 -->
+        <div id="modal-4" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
+                <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
+                    aria-label="Close">&times;</button>
+                <h2 class="text-2xl font-bold text-teal-800 mb-2">AXIS Hosts Community Health Fair</h2>
+                <p class="text-teal-700 text-sm mb-3">Published: March 2025 | CSR</p>
+                <img src="images/GT5A8102.jpg" alt="Community Health Fair"
+                    class="rounded-lg mb-4 max-h-56 object-cover w-full" />
+                <p class="text-teal-800 mb-2">
+                    Over 2,000 local residents received free health screenings, medicines, and wellness guidance at
+                    our annual community fair.
+                </p>
+                <p class="text-teal-700">AXIS is dedicated to uplifting communities and promoting health for all.
+                </p>
             </div>
-            <!-- Modal 4 -->
-            <div id="modal-4" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
-                <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
-                    <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
-                        aria-label="Close">&times;</button>
-                    <h2 class="text-2xl font-bold text-teal-800 mb-2">AXIS Hosts Community Health Fair</h2>
-                    <p class="text-teal-700 text-sm mb-3">Published: March 2025 | CSR</p>
-                    <img src="images/GT5A8102.jpg" alt="Community Health Fair"
-                        class="rounded-lg mb-4 max-h-56 object-cover w-full" />
-                    <p class="text-teal-800 mb-2">
-                        Over 2,000 local residents received free health screenings, medicines, and wellness guidance at
-                        our annual community fair.
-                    </p>
-                    <p class="text-teal-700">AXIS is dedicated to uplifting communities and promoting health for all.
-                    </p>
-                </div>
+        </div>
+        <!-- Modal 5 -->
+        <div id="modal-5" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
+            <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
+                <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
+                    aria-label="Close">&times;</button>
+                <h2 class="text-2xl font-bold text-teal-800 mb-2">New Collaboration with MedTech Labs</h2>
+                <p class="text-teal-700 text-sm mb-3">Published: February 2025 | Research</p>
+                <img src="images/gallery/gallery-6.jpg" alt="Research Collaboration"
+                    class="rounded-lg mb-4 max-h-56 object-cover w-full" />
+                <p class="text-teal-800 mb-2">
+                    AXIS and MedTech Labs are partnering to develop next-generation biosimilars and advance
+                    precision medicine research.
+                </p>
+                <p class="text-teal-700">Stay tuned for upcoming joint publications and scientific breakthroughs.
+                </p>
             </div>
-            <!-- Modal 5 -->
-            <div id="modal-5" class="modal fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden">
-                <div class="bg-white rounded-xl p-8 max-w-lg w-full relative shadow-2xl animate-fadeIn">
-                    <button class="absolute top-3 right-3 text-teal-600 hover:text-teal-900 text-2xl font-bold close-modal"
-                        aria-label="Close">&times;</button>
-                    <h2 class="text-2xl font-bold text-teal-800 mb-2">New Collaboration with MedTech Labs</h2>
-                    <p class="text-teal-700 text-sm mb-3">Published: February 2025 | Research</p>
-                    <img src="images/gallery/gallery-6.jpg" alt="Research Collaboration"
-                        class="rounded-lg mb-4 max-h-56 object-cover w-full" />
-                    <p class="text-teal-800 mb-2">
-                        AXIS and MedTech Labs are partnering to develop next-generation biosimilars and advance
-                        precision medicine research.
-                    </p>
-                    <p class="text-teal-700">Stay tuned for upcoming joint publications and scientific breakthroughs.
-                    </p>
-                </div>
-            </div>
-    
-        </section>
+        </div>
     </section>
 
     <!-- Testimonials Section -->
@@ -865,7 +934,48 @@
         </div>
     </footer>
 
-    <script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+                // Swiper News & Events slider
+            var swiper = new Swiper('.newsSwiper', {
+                slidesPerView: 1,
+            spaceBetween: 32,
+            loop: true,
+            centeredSlides: true,
+            autoplay: {
+                delay: 4500,
+            disableOnInteraction: false,
+                    },
+            pagination: {
+                el: '.swiper-pagination',
+            clickable: true,
+                    },
+            navigation: {
+                nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+                    },
+            effect: 'slide',
+            speed: 800,
+                });
+
+                // News Modal logic
+                document.querySelectorAll('.readmore-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    var n = this.getAttribute('data-news');
+                    document.getElementById('modal-' + n).classList.remove('hidden');
+                });
+                });
+                document.querySelectorAll('.close-modal').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    this.closest('.modal').classList.add('hidden');
+                });
+                });
+                document.querySelectorAll('.modal').forEach(modal => {
+                modal.addEventListener('click', function (e) {
+                    if (e.target === modal) modal.classList.add('hidden');
+                });
+                });
+        
         // Details for each feature (edit as needed)
         const features = [
             {
@@ -1072,48 +1182,7 @@
 
         showSlide(0);
         startSlider();
-        var swiper = new Swiper('.newsSwiper', {
-                slidesPerView: 1,
-                spaceBetween: 32,
-                loop: true,
-                centeredSlides: true,
-                autoplay: {
-                    delay: 4500,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev'
-                },
-                effect: 'slide',
-                speed: 800,
-            });
-
-            // Modal logic
-            document.querySelectorAll('.readmore-btn').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    var n = this.getAttribute('data-news');
-                    document.getElementById('modal-' + n).classList.remove('hidden');
-                });
-            });
-            document.querySelectorAll('.close-modal').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    this.closest('.modal').classList.add('hidden');
-                });
-            });
-            // Also close modal when clicking outside the modal content
-            document.querySelectorAll('.modal').forEach(modal => {
-                modal.addEventListener('click', function (e) {
-                    if (e.target === modal) modal.classList.add('hidden');
-                });
-            });
     </script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
 </body>
 
 </html>
